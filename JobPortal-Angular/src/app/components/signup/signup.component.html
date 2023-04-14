@@ -1,0 +1,74 @@
+<div class="container">
+	<div class="d-flex">
+		<form *ngIf="!isSuccessful" [formGroup]="form" (ngSubmit)="onSubmit()"
+		#f="ngForm"
+		novalidate class="form-signup">
+			<div class="card-title">
+				<h3 class="text-center">Sign Up to Job Portal</h3>
+			</div>
+			<div class="row my-3">
+				<div class="col-lg-6 mb-3">
+					<label for="firstName" class="form-label">First Name</label> <input formControlName="firstName"
+						type="text" class="form-control" placeholder="First name" id="first_name" required>
+				</div>
+				<div class="col-lg-6">
+					<label for="lastName" class="form-label">Last Name</label> <input formControlName="lastName"
+						type="text" class="form-control" placeholder="Last name" id="last_name" required>
+				</div>
+			</div>
+			<div class="row my-3">
+				<div class="col-lg-6 mb-3">
+					<label for="email" class="form-label">Email</label> <input formControlName="email"
+						type="text" class="form-control" placeholder="Email" id="email">
+				</div>
+				<div class="col-lg-6">
+					<label for="phone" class="form-label">Phone</label> <input formControlName="phone"
+						type="number" class="form-control" placeholder="Phone" id="phone">
+				</div>
+			</div>
+			<div class="row my-3">
+				<div class="col-lg-6 mb-3">
+					<label for="password" class="form-label">Password</label> <input formControlName="password"
+						type="password" class="form-control" placeholder="Password" id="password">
+				</div>
+				<div class="col-lg-6">
+					<label for="retype-password" class="form-label">Retype
+						Password</label> <input type="password" class="form-control"
+						placeholder="Retype Password">
+				</div>
+			</div>
+			<div class="form-radio">
+				<div class="row my-3">
+					<div class="col-lg-6 mb-3">
+						<input formControlName="role" value="ROLE_APPLICANT" type="radio" class="btn-check" name="options-outlined" id="applicant" autocomplete="off">
+						<label class="btn btn-outline-success w-100" for="applicant">I am an applicant</label>
+					</div>
+					<div class="col-lg-6 mb-3">
+						<input formControlName="role" value="ROLE_EMPLOYER" type="radio" class="btn-check" name="options-outlined" id="employer" autocomplete="off">
+						<label class="btn btn-outline-success w-100" for="employer">I am an employer</label>
+					</div>
+				</div>
+			</div>
+			<div class="my-3 form-check">
+				<input formControlName="userAgreement" type="checkbox" class="form-check-input" id="exampleCheck1" required>
+				<label class="form-check-label" for="checkbox">Yes, I
+					understand and agree to the Job Portal <a href="">Terms of
+						Service</a>, including the <a href="">User Agreement</a> and <a
+					href="">Privacy Policy</a>.
+				</label>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary w-100" id="btn_create">Create
+					Account</button>
+			</div>
+			<div class="mt-5 text-center">
+				<p>
+					Already have an account? <span><a routerLink="/login">Log In</a></span>
+				</p>
+			</div>
+			<div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+				Signup failed!<br />{{ errorMessage }}
+			  </div>
+		</form>
+	</div>
+</div>

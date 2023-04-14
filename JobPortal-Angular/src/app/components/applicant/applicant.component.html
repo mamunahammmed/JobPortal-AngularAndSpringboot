@@ -1,0 +1,204 @@
+<nav class="navbar border border-bottom-primary bg-white">
+  <div class="container">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    
+    <a class="navbar-brand fw-bold text-success ps-lg-4" routerLink="/">JOB PORTAL</a>
+    <button class="btn btn-primary">Home</button>
+  </div>
+</nav>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img
+      class="avatar mat-elevation-z8"
+      src="assets/img/rakib.jpg"
+    />
+
+    <h4 class="name">Mazharul Islam Rakib</h4>
+    <p class="designation">Software Engineer</p>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/applicant">
+      <i class='bi bi-grid'></i>
+      <span>Dashboard</span>
+    </button>
+    
+    <!-- profile button -->
+    <button mat-button class="menu-button collapsed" data-bs-target="#profile" data-bs-toggle="collapse">
+      <i class='bi bi-person'></i>
+      <span>Profile</span>
+      <i class="bi bi-chevron-down"></i>
+    </button>
+    <ul id="profile" class="nav-content collapse">
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/account-info">
+          <i class="bi bi-arrow-right"></i>
+          <span>Account Info</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/personal-details">
+          <i class="bi bi-arrow-right"></i>
+          <span>Personal Details</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/address-details">
+          <i class="bi bi-arrow-right"></i>
+          <span>Address Details</span>
+        </button>
+      </li>
+    </ul>
+    <!-- profile button end-->
+    
+    <!-- Education button -->
+    <button mat-button class="menu-button collapsed" data-bs-target="#education" data-bs-toggle="collapse">
+      <i class='bi bi-mortarboard'></i>
+        <span>Education</span>
+      <i class="bi bi-chevron-down"></i>
+    </button>
+    <ul id="education" class="nav-content collapse">
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/academic-summary">
+          <i class="bi bi-arrow-right"></i>
+          <span>Academic Summary</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/other-certificates">
+          <i class="bi bi-arrow-right"></i>
+          <span>Other Certificates</span>
+        </button>
+      </li>
+    </ul>
+    <!-- Education button end-->
+
+    <!-- Employment button -->
+    <button mat-button class="menu-button" routerLink="/applicant/employment">
+      <i class='bi bi-person-workspace'></i>
+        <span>Employment</span>
+    </button>
+    <!-- Employment button end-->
+
+    <!-- others button -->
+    <button mat-button class="menu-button collapsed" data-bs-target="#others" data-bs-toggle="collapse">
+      <i class='bi bi-border-style nav_icon'></i>
+      <span>Others</span>
+      <i class="bi bi-chevron-down"></i>
+    </button>
+    <ul id="others" class="nav-content collapse">
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/skills">
+          <i class="bi bi-arrow-right"></i>
+          <span>Skills</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/portfolio">
+          <i class="bi bi-arrow-right"></i>
+          <span>Portfolio</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/language">
+          <i class="bi bi-arrow-right"></i>
+          <span>Language</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/references">
+          <i class="bi bi-arrow-right"></i>
+          <span>References</span>
+        </button>
+      </li>
+    </ul>
+    <!-- others button end-->
+
+    <!-- billing button -->
+    <button mat-button class="menu-button collapsed" data-bs-target="#billing" data-bs-toggle="collapse">
+      <i class='bi bi-coin'></i>
+      <span>Billing</span>
+      <i class="bi bi-chevron-down"></i>
+    </button>
+    <ul id="billing" class="nav-content collapse">
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/balance">
+          <i class="bi bi-arrow-right"></i>
+          <span>Balance</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/payment-method">
+          <i class="bi bi-arrow-right"></i>
+          <span>Payment Method</span>
+        </button>
+      </li>
+    </ul>
+    <!-- Billing button end-->
+
+    <!-- applied jobs button -->
+    <button mat-button class="menu-button collapsed" data-bs-target="#applied_jobs" data-bs-toggle="collapse">
+      <i class='bi bi-envelope-check'></i>
+      <span>Applied Jobs</span>
+      <i class="bi bi-chevron-down"></i>
+    </button>
+    <ul id="applied_jobs" class="nav-content collapse">
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/per-applied-jobs">
+          <i class="bi bi-arrow-right"></i>
+          <span>Permanent Jobs</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/free-applied-jobs">
+          <i class="bi bi-arrow-right"></i>
+          <span>Freelance Jobs</span>
+        </button>
+      </li>
+    </ul>
+    <!-- applied jobs button end-->
+
+    <!-- View CV button -->
+    <button mat-button class="menu-button collapsed" data-bs-target="#cv" data-bs-toggle="collapse">
+      <i class='bi bi-eye'></i>
+      <span>View CV</span>
+      <i class="bi bi-chevron-down"></i>
+    </button>
+    <ul id="cv" class="nav-content collapse">
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/job-portal-cv">
+          <i class="bi bi-arrow-right"></i>
+          <span>Job Portal CV</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button class="list-button" routerLink="/applicant/personal-cv">
+          <i class="bi bi-arrow-right"></i>
+          <span>Personal CV</span>
+        </button>
+      </li>
+    </ul>
+    <!-- CV view button end-->
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/">
+      <i class='bi bi-box-arrow-right'></i>
+      <span>Sign Out</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,183 @@
+<app-header></app-header><br>
+	
+	<div class="bg-img img-fluid">
+		<div class="col-sm-12">
+	  		<img src="assets/img/home.jpg" alt="Snow" style="width:100%;">
+	    </div>
+	  <div class="centered col-sm-12">
+	  	<p class="title text-primary">JOB PORTAL</p>
+	  	<p class="slogan">Create A Better Future For Yourself</p>
+	  	<button class="btn btn-primary me-3">Post a Job</button>
+	  	<button class="btn btn-primary me-3">Apply a Job</button>
+	  </div>
+	</div>
+	
+	
+	
+	
+    <!-- Job by category cards start -->
+    <div class="container  my-5">
+        <div class="job-list-head">
+            <i class="bi bi-card-list"></i>
+            <span>JOB BY CATEGORY</span>
+        </div>
+
+        <!-- Job by category cards row start-->
+        <div class="row job-category">
+            <div class="col-3" *ngFor="let category of jobCategory">
+                <div class="card text-center my-4">
+                    <div class="card-body">
+                        <div>
+                            <h2 class="card-text">{{ category.categoryName }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <!-- Job by category cards row end -->
+
+        <div class="text-end">
+            <a href="/permanent/job/category">Browse more</a>
+        </div>
+    </div>
+    <!-- Job by category cards end -->
+
+    <!-- All current job cards start -->
+    <div class="container  my-5">
+        <div class="job-list-head mb-3">
+            <i class="bi bi-card-list"></i>
+            <span>CURRENT JOB</span>
+        </div>
+
+<!-- All current job start -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-lg-4" *ngFor="let job of jobs">
+            <div class="card job-card">
+            <div class="card-img-top row">
+                <div class="col">
+                <img src="assets/logo/nagad-logo.png" alt="Card image">
+                </div>
+                <div class="col">
+                <p class="fw-bold">{{ job.companyName }}</p>
+                <p>{{ job.location }}</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a class="stretched-link" [routerLink]="['/job/', job.per_jobpost_id, 'view']">
+                    <h4 class="card-title fw-bold">{{ job.jobTitle }}</h4>
+                </a>
+
+                <div class=" row">
+                    <div class="col left">
+                    <p>{{ job.salary }}</p>
+                    <p>{{ job.education }}</p>
+                    <p>Posted: 2 days ago</p>
+                    </div>
+                    <div class="col">
+                    <p>{{ job.employmentStatus }}</p>
+                    <p>{{ job.experience }}</p>
+                    <p>{{ job.deadline }}</p>
+                    <p>{{ job.per_jobpost_id }}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+</div>
+  
+  <!-- All current job End -->
+
+
+        <div class="text-end">
+            <a href="/permanent/job">Browse more</a>
+        </div>
+    </div>
+    <!-- All current job cards end -->
+
+
+
+    <!--Freelance Job by category cards start -->
+    <div class="container  my-5">
+        <div class="job-list-head">
+            <i class="bi bi-card-list"></i>
+            <span>FREELANCE JOB BY CATEGORY</span>
+        </div>
+
+        <!--Freelance Job by category cards row start-->
+        <div class="row job-category">
+            <div class="col-3" *ngFor="let category of jobCategory">
+                <div class="card text-center my-4">
+                    <div class="card-body">
+                        <div>
+                            <h2 class="card-text">{{ category.categoryName }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <!--Freelance Job by category cards row end -->
+
+        <div class="text-end">
+            <a href="/freelance/job/category">Browse more</a>
+        </div>
+    </div>
+    <!--Freelance Job by category cards end -->
+
+    <!-- All current Freelance job cards start -->
+    <div class="container  my-5">
+        <div class="job-list-head">
+            <i class="bi bi-card-list"></i>
+            <span>CURRENT FREELANCE JOB</span>
+        </div>
+
+        <!-- All current Freelance job cards row start-->
+        <div class="row freelance-job-list">
+            <div class="col-6">
+                <div class="container">
+                    <div class="card mx-auto">
+                        <div class="row">
+                            <div class="logo ml-3 mb-3"><img src="assets/logo/google-logo.png"></div>
+                        </div>
+                            <div class="card-title">
+                                <p class="heading">Logo Design&nbsp;<i class="bi bi-compass"></i></p>
+                            </div>
+                            
+                            <p class="text-muted">You will be responsible for the visual design<br>for multi device.Understand basic design,<br>User journey, Ideation and Wireframing, etc...</p>
+                            <div class="row btnrow my-4">
+                                <div class="col-4 col-md-3"><button type="button" class="btn btn-outline-success btn-sm" style="background: #00ff002b;">Full Time</button></div>
+                                <div class="col-4 col-md-3"><button type="button" class="btn btn-outline-primary btn-sm" style="background: #007bff33;">Min. 1 year</button></div>
+                                <div class="col-4 col-md-3"><button type="button" class="btn btn-outline-danger btn-sm" style="background: #dc35452e;">Director</button></div>
+                            </div>
+                
+                            <div class="mutual"><i class="bi bi-people-fill"></i>&nbsp;&nbsp;<span>5 Friends work here</span></div>
+                            <div class="row btnsubmit mt-4">
+                                <div class="col-md-6 col-6">
+                                    <button type="button" class="btn btn-primary btn-lg"><span>Apply Now</span></button>
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <button type="button" class="btn btn-dark btn-lg"><span>View</span></button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- All current Freelance job cards row end -->
+
+        <div class="text-end">
+            <a routerLink="/freelance-job">Browse more</a>
+        </div>
+    </div>
+    <!-- All current Freelance job cards end -->
+
+
+	<br>
+	<br>
+
+    <app-footer></app-footer>
+

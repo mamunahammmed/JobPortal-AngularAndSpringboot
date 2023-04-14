@@ -1,0 +1,48 @@
+<div class="container bg-white border">
+    <header>
+        <h1>{{ job.jobTitle }}</h1>
+        <p>{{ job.companyName }}</p>
+        <p>{{ job.location }}</p>
+    </header>
+  <main>
+    <section class="description">
+      <h2>Job Description</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed egestas, magna eu aliquet aliquet, velit sapien dictum lacus, 
+        vel bibendum justo tellus et leo. Nam tincidunt, elit a consectetur 
+        varius, urna risus scelerisque nibh, eu commodo justo nisl a justo.
+      </p>
+    </section>
+    <section class="responsibilities">
+      <h2>Responsibilities</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Sed egestas, magna eu aliquet</li>
+      </ul>
+    </section>
+    <section class="requirements">
+      <h2>Requirements</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur adipiscing elit</li>
+        <li>Sed egestas, magna eu aliquet</li>
+      </ul>
+    </section>
+    <section class="apply">
+    <h2>How to Apply</h2>
+    <p>
+      Please send your resume and cover letter to [email address].
+    </p>
+    </section>
+  </main>
+  <span class="d-flex justify-content-center my-5">
+    <button class="btn btn-primary" (click)="apply(job)">Apply</button>
+  </span>
+  <footer>
+    <p>Copyright © [Year] [Company Name]</p>
+  </footer>
+</div>
+
+

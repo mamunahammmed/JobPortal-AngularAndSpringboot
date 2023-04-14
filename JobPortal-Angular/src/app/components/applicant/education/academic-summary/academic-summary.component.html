@@ -1,0 +1,102 @@
+<!-- Academic summary view start -->
+
+<div *ngIf="dataOC" class="container">
+    <div>
+      <button (click)="dataClose()" class="btn btn-primary float-end edit-btn">Edit</button>
+    </div><br><br>
+    <div class="academic-summary">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Degree</h3>
+          <p>{{academicSummary.degree}}</p>
+        </div>
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Subject/Group</h3>
+          <p>{{academicSummary.subjectGroup}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Institute/Board</h3>
+          <p>{{academicSummary.instituteBoard}}</p>
+        </div>
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Year of Passing</h3>
+          <p>{{academicSummary.passingYear}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Result</h3>
+          <p>{{academicSummary.result}}</p>
+        </div>
+        <div class="col-sm-6">
+          <h3 class="fw-bold">Scale</h3>
+          <p>{{academicSummary.scale}}</p>
+        </div>
+      </div>
+    </div><br>
+    <div>
+      <button (click)="formOpen()" class="btn btn-primary add-btn">Add New</button>
+    </div>
+  </div><br><br>
+
+  <!-- Academic summary view end -->
+
+  <!-- accordion form start -->
+  <div class="container">
+    <div>
+      <form [formGroup]="form" (ngSubmit)="updateByUserId()" *ngIf="formOC" class="form-academic" method="post">
+        <div class="row my-1">
+          <div class="col-lg-6 mb-3">
+            <label for="degree" class="form-label">Degree</label>
+            <select class="form-select" formControlName="degree">
+              <option selected>Select</option>
+              <option value="psc">PSC/5 pass</option>
+              <option value="jsc">JSC/JDC/8 pass</option>
+              <option value="ssc">SSC/Dakhil/O Level</option>
+              <option value="hsc">HSC/Alim/A Level/</option>
+              <option value="diploma">Diploma</option>
+              <option value="honours">Bachelor/Honours</option>
+              <option value="masters">Masters</option>
+              <option value="phd">PhD(Doctor of Philosophy)</option>
+            </select>
+          </div>
+          <div class="col-lg-6">
+            <label for="subject" class="form-label">Subject/Group</label>
+            <input type="text" class="form-control" placeholder="Subject/Group" formControlName="subjectGroup">
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-lg-6 mb-3">
+            <label for="institute" class="form-label">Institute/Board</label>
+            <input type="text" class="form-control" placeholder="Institute/Board" formControlName="instituteBoard">
+          </div>
+          <div class="col-lg-6">
+            <label for="passingYear" class="form-label">Year of Passing</label>
+            <input type="text" class="form-control" placeholder="Year" formControlName="passingYear">
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-lg-6 mb-3">
+            <label for="result" class="form-label">Result</label>
+            <input type="number" class="form-control" placeholder="GPA/CGPA" formControlName="result">
+          </div>
+          <div class="col-lg-6">
+            <label for="scale" class="form-label">Scale</label>
+            <select class="form-select"  type="text" formControlName="scale">
+              <option selected>Select</option>
+              <option value="4">Out of 4</option>
+              <option value="5">Out of 5</option>
+            </select>
+          </div>
+        </div>
+        <div class="my-2">
+          <button  type="submit" class="btn btn-primary me-3">Save</button>
+          <button (click)="formClose()" class="btn btn-primary">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- accordion form end -->

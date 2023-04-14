@@ -1,0 +1,42 @@
+<!-- Applied job list start -->
+<div class="container">
+    <table class="table align-middle mb-0">
+        <thead class="bg-light">
+        <tr>
+            <th>Apply Date</th>
+            <th>Title</th>
+            <th>Company Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let job of perAppliedJobs">
+            <td>
+            <div class="d-flex align-items-center">
+                <p class="mb-1">{{ job.applyDate }}</p>
+            </div>
+            </td>
+            <td>
+                <p class="mb-1 job-title"  [routerLink]="['/job/', job.per_jobpost_id, 'view']">{{ job.jobTitle }}</p>
+            </td>
+            <td>
+            <span class="">{{ job.companyName }}</span>
+            </td>
+            <td>
+              <span class="">{{ job.jobCategory }}</span>
+            </td>
+            <td>{{ job.status }}</td>
+            <td>
+                <div>
+                    <button (click)="delete(job)" type="button" class="btn btn-sm btn-outline-primary mb-1">Undo</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Applied job list end -->
+
+
